@@ -15,7 +15,7 @@ namespace Initiation
 
             routes.MapRoute("Frontpage","", new { controller = "Home", action = "Index"});
 
-            routes.MapRoute("Form", "Yo", new { controller = "Form", action = "Form" });
+            routes.MapRoute("Form", "Formulaire", new { controller = "Form", action = "Form" });
         }
     }
 }

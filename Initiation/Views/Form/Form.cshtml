@@ -1,17 +1,22 @@
-﻿@{
+﻿@model Initiation.Models.FormModel
+@{
     ViewBag.Title = "Formulaire";
 }
 
 <h1>@ViewBag.Message1</h1>
 <h2>@ViewData["Message2"]</h2>
 <img src="@ViewBag.ImgUrl", alt="Smiley" height="240" width="240"/><br />
+
 @using (Html.BeginForm())
 {
-    @Html.Label("Nom")<br />
-    @Html.TextBox("Nom")<br />
-    @Html.Label("Email")<br />
-    @Html.TextBox("Email")<br />
-    @Html.Label("Commentaire")<br />
-    @Html.TextArea("Commentaire")<br />  
+    @Html.LabelFor(model => model.Nom)<br />
+    @Html.TextBoxFor(model => model.Nom)
+    @Html.ValidationMessageFor(model => model.Nom)<br />
+    @Html.LabelFor(model => model.Email)<br />
+    @Html.TextBoxFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)<br />
+    @Html.LabelFor(model => model.Commentaire)<br />
+    @Html.TextAreaFor(model => model.Commentaire)<br />
+    @Html.ValidationMessageFor(model => model.Commentaire)<br />  
     <button type = "submit">Submit</button>  
 }
